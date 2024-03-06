@@ -1,0 +1,16 @@
+[package]
+name = "cr_template"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jonas Pleyer <jonas.pleyer@fdm.uni-freiburg.de>"]
+
+[dependencies]
+serde = "1.0.197"
+rand = "0.8.5"
+rand_chacha = "0.3.1"
+nalgebra = "0.32"
+cellular_raza = { git="https://github.com/jonaspleyer/cellular_raza/" }
+num = "0.4.1"
+rayon = "1.8"
+kdam = { version="0.5", features = ["template"] }
+
