@@ -33,7 +33,6 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    requires: check
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
