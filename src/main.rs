@@ -1,9 +1,7 @@
 use cellular_raza::building_blocks::{
     BoundLennardJonesF32, CartesianCuboid2NewF32, NewtonDamped2DF32,
 };
-use cellular_raza::concepts::domain_new::Domain;
 use cellular_raza::concepts::{CalcError, CellAgent, Interaction, Mechanics, RngError, Volume};
-use cellular_raza::core::backend::chili::{build_aux_storage, build_communicator};
 
 use cellular_raza::core::backend::chili;
 
@@ -113,14 +111,18 @@ fn main() -> Result<(), chili::SimulationError> {
         save_points.clone(),
     )?;
 
+    let settings = chili::Settings {
+        n_threads: simulation_settings.n_threads.try_into().unwrap(),
+        time: time_stepper,
+        storage: storage_builder,
+        show_progressbar: true,
+    };
+
     chili::run_simulation!(
         domain: domain,
         agents: agents,
-        time: time_stepper,
-        n_threads: simulation_settings.n_threads,
-        storage: storage_builder,
+        settings: settings,
         aspects: [Mechanics, Interaction],// TODO add cycle next
-        core_path: cellular_raza::core,
     )?;
     Ok(())
 }
