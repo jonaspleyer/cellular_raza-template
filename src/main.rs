@@ -40,15 +40,15 @@ impl Volume for Vol {
 
 #[derive(CellAgent, Clone, Deserialize, Serialize)]
 struct Agent {
-    #[Mechanics(Vector2<f32>, Vector2<f32>, Vector2<f32>, f32)]
+    #[Mechanics]
     pub mechanics: NewtonDamped2DF32,
-    #[Interaction(Vector2<f32>, Vector2<f32>, Vector2<f32>)]
+    #[Interaction]
     pub interaction: BoundLennardJonesF32,
     // #[Cycle]
     // pub cycle: NoCycle,
-    // #[CellularReactions(Nothing, Nothing)]
+    // #[CellularReactions]
     // pub reactions: NoCellularReactions,
-    // #[ExtracellularGradient(nalgebra::SVector<Vector2<f64>, 2>)]
+    // #[ExtracellularGradient]
     // pub gradients: NoExtracellularGradientSensing,
     #[Volume]
     pub volume: Vol,
