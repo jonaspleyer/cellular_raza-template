@@ -1,7 +1,7 @@
 use cellular_raza::building_blocks::{
     BoundLennardJonesF32, CartesianCuboid2NewF32, NewtonDamped2DF32,
 };
-use cellular_raza::concepts::{CalcError, CellAgent, Interaction, Mechanics, RngError, Volume};
+use cellular_raza::concepts::{CalcError, CellAgent, Interaction, Mechanics, RngError};
 
 use cellular_raza::core::backend::chili;
 
@@ -29,29 +29,12 @@ impl Default for SimulationSettings {
     }
 }
 
-#[derive(Clone, Deserialize, Serialize)]
-struct Vol(f64);
-
-impl Volume for Vol {
-    fn get_volume(&self) -> f64 {
-        self.0
-    }
-}
-
 #[derive(CellAgent, Clone, Deserialize, Serialize)]
 struct Agent {
     #[Mechanics]
     pub mechanics: NewtonDamped2DF32,
     #[Interaction]
     pub interaction: BoundLennardJonesF32,
-    // #[Cycle]
-    // pub cycle: NoCycle,
-    // #[CellularReactions]
-    // pub reactions: NoCellularReactions,
-    // #[ExtracellularGradient]
-    // pub gradients: NoExtracellularGradientSensing,
-    #[Volume]
-    pub volume: Vol,
 }
 
 fn main() -> Result<(), chili::SimulationError> {
@@ -73,7 +56,6 @@ fn main() -> Result<(), chili::SimulationError> {
             bound: 0.1,
             cutoff: 1.0,
         },
-        volume: Vol(1.0),
     };
 
     let domain_size = simulation_settings.domain_size;
