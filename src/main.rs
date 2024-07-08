@@ -83,7 +83,7 @@ fn main() -> Result<(), chili::SimulationError> {
     // Time Setup
     let t0: f32 = 0.0;
     let dt = simulation_settings.dt;
-    let save_points = vec![5.0, 10.0, 15.0, 20.0];
+    let save_points: Vec<_> = (0..21).map(|n| n as f32).collect();
     let time_stepper = cellular_raza::prelude::time::FixedStepsize::from_partial_save_points(
         t0,
         dt,
@@ -101,7 +101,7 @@ fn main() -> Result<(), chili::SimulationError> {
         domain: domain,
         agents: agents,
         settings: settings,
-        aspects: [Mechanics, Interaction],// TODO add cycle next
+        aspects: [Mechanics, Interaction],
     )?;
     Ok(())
 }
