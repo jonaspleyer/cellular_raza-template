@@ -9,7 +9,7 @@ serde = "1.0.197"
 rand = "0.8.5"
 rand_chacha = "0.3.1"
 nalgebra = "0.33"
-cellular_raza = { git="https://github.com/jonaspleyer/cellular_raza/" }
+cellular_raza = "0.1"
 num = "0.4.1"
 rayon = "1.8"
 kdam = { version="0.5", features = ["template"] }
