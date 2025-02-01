@@ -6,11 +6,10 @@ authors = ["Jonas Pleyer <jonas.pleyer@fdm.uni-freiburg.de>"]
 
 [dependencies]
 serde = "1.0.197"
-rand = "0.8.5"
-rand_chacha = "0.3.1"
+rand = "0.8"
+rand_chacha = "0.3"
 nalgebra = "0.33"
 cellular_raza = "0.1"
-num = "0.4.1"
+num = "0.4"
 rayon = "1.8"
-kdam = { version="0.5", features = ["template"] }
-
+kdam = { version="0.6", features = ["template"] }
