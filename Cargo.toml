@@ -8,7 +8,7 @@ authors = ["Jonas Pleyer <jonas.pleyer@fdm.uni-freiburg.de>"]
 nalgebra = { git = "https://github.com/dimforge/nalgebra", ref="0e8aed8809999313f0d964341e7dd83b6f1f742d" }
 
 [dependencies]
-serde = "1.0.197"
+serde = "1.0"
 rand = "0.9"
 rand_chacha = "0.9"
 nalgebra = "0.33"
