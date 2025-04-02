@@ -5,7 +5,8 @@ edition = "2021"
 authors = ["Jonas Pleyer <jonas.pleyer@fdm.uni-freiburg.de>"]
 
 [patch.crates-io]
-nalgebra = { git = "https://github.com/dimforge/nalgebra", ref="0e8aed8809999313f0d964341e7dd83b6f1f742d" }
+nalgebra = { git = "https://github.com/dimforge/nalgebra" }
+ron = { git = "https://github.com/ron-rs/ron" }
 
 [dependencies]
 serde = "1.0"
