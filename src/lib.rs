@@ -1,6 +1,4 @@
-use cellular_raza::building_blocks::{
-    BoundLennardJonesF32, CartesianCuboid2NewF32, NewtonDamped2DF32,
-};
+use cellular_raza::building_blocks::{BoundLennardJonesF32, CartesianCuboid, NewtonDamped2DF32};
 use cellular_raza::concepts::{
     CalcError, CellAgent, Interaction, Mechanics, Position, RngError, Velocity,
 };
@@ -89,7 +87,7 @@ pub fn run_simulation(
     });
 
     // Domain Setup
-    let domain = CartesianCuboid2NewF32::from_boundaries_and_n_voxels(
+    let domain = CartesianCuboid::from_boundaries_and_n_voxels(
         [0.0; 2],
         [simulation_parameters.domain_size; 2],
         [simulation_parameters.n_voxels; 2],
