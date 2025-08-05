@@ -4,14 +4,11 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Jonas Pleyer <jonas.pleyer@fdm.uni-freiburg.de>"]
 
-[patch.crates-io]
-nalgebra = { git = "https://github.com/dimforge/nalgebra/" }
-
 [dependencies]
 serde = "1.0"
 rand = "0.9"
 rand_chacha = "0.9"
-nalgebra = "0.33"
+nalgebra = "0.34"
 cellular_raza = { git = "https://github.com/jonaspleyer/cellular_raza" }
 num = "0.4"
 rayon = "1.8"
