@@ -111,7 +111,7 @@ pub fn run_simulation(
         n_threads: simulation_parameters.n_threads.try_into().unwrap(),
         time: time_stepper,
         storage: storage_builder,
-        show_progressbar: true,
+        progressbar: Some("Running Simulation".into()),
     };
 
     chili::run_simulation!(
